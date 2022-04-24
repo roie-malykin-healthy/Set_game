@@ -6,3 +6,8 @@
 //
 
 import Foundation
+enum numberOfShapesFeature: CardFeature {
+    case one
+    case two
+    case three
+}

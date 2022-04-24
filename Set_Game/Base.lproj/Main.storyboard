@@ -383,6 +383,8 @@
                     <connections>
                         <outlet property="give3CardsBUtton" destination="1NH-VQ-nEl" id="ibp-Pd-06E"/>
                         <outlet property="newGameButton" destination="wRK-Vx-hqG" id="Lqp-l3-A0T"/>
+                        <outlet property="scoreText" destination="rdF-xy-Uy3" id="cSK-Aj-S29"/>
+                        <outlet property="view" destination="rdF-xy-Uy3" id="xnz-AE-B3x"/>
                         <outletCollection property="setCardButtons" destination="Tir-tt-UKH" collectionClass="NSMutableArray" id="bFe-Yt-Vp8"/>
                         <outletCollection property="setCardButtons" destination="jm8-7M-otJ" collectionClass="NSMutableArray" id="Cqq-ra-Q56"/>
                         <outletCollection property="setCardButtons" destination="dGS-lp-qMb" collectionClass="NSMutableArray" id="cc8-Rh-jDV"/>

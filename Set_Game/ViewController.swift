@@ -13,8 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet private var setCardButtons: [UIButton]!
     @IBOutlet weak var give3CardsBUtton: UIButton!
     @IBOutlet weak var newGameButton: UIButton!
+    @IBOutlet weak var scoreText: UITextField!
     
-    //------ Methods ------\\
+    //------ Actions ------\\
     @IBAction private func touchCard(_ sender: UIButton)  {
         if let cardNumber = setCardButtons.firstIndex(of: sender){
             game.chooseCard(at: cardNumber)
@@ -25,14 +26,27 @@ class ViewController: UIViewController {
     }
     
     @IBAction func touch3MoreCards(_ sender: UIButton) {
+        game.revialThreeCards()
+        updateViewFromModel()
     }
     
     @IBAction func touchNewGame(_ sender: UIButton) {
+        newGameView()
+    }
+    
+    
+    //--- Methods ---\\
+    
+    private func updateScoreText(current_score: Int)
+    {
+        scoreText.text = "Score : \(current_score)"
     }
     
     private func updateViewFromModel() {
         
     }
+    
+    
     
     
     override func viewDidLoad() {

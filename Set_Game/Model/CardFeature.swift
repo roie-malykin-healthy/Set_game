@@ -6,6 +6,6 @@
 //
 
 import Foundation
-protocol CardFeature {
+protocol CardFeature: CaseIterable {
     
 }

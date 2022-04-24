@@ -11,6 +11,8 @@ class ViewController: UIViewController {
     //------ Attributes ------\\
     private var game = SetGame()
     @IBOutlet private var setCardButtons: [UIButton]!
+    @IBOutlet weak var give3CardsBUtton: UIButton!
+    @IBOutlet weak var newGameButton: UIButton!
     
     //------ Methods ------\\
     @IBAction private func touchCard(_ sender: UIButton)  {
@@ -22,7 +24,11 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func touch3MoreCards(_ sender: UIButton) {
+    }
     
+    @IBAction func touchNewGame(_ sender: UIButton) {
+    }
     
     private func updateViewFromModel() {
         

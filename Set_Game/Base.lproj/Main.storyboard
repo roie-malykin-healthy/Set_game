@@ -339,16 +339,50 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRK-Vx-hqG">
+                                <rect key="frame" x="160" y="814" width="95" height="48"/>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="New Game"/>
+                                <connections>
+                                    <action selector="touchNewGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iaq-Fw-IQ0"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Score : 0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rdF-xy-Uy3">
+                                <rect key="frame" x="40" y="769" width="112" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1NH-VQ-nEl">
+                                <rect key="frame" x="285" y="738" width="102" height="53"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="3 more card"/>
+                                <connections>
+                                    <action selector="touch3MoreCards:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nUm-N8-FL0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
+                            <constraint firstAttribute="height" secondItem="1NH-VQ-nEl" secondAttribute="height" multiplier="16.9057" id="0eK-E4-6hZ"/>
+                            <constraint firstItem="wRK-Vx-hqG" firstAttribute="top" secondItem="1NH-VQ-nEl" secondAttribute="bottom" constant="14" id="0uo-u2-17N"/>
+                            <constraint firstItem="wRK-Vx-hqG" firstAttribute="top" secondItem="rdF-xy-Uy3" secondAttribute="bottom" constant="33" id="Cs9-JK-Ez3"/>
+                            <constraint firstItem="rdF-xy-Uy3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="NLB-eT-Ync"/>
+                            <constraint firstItem="wRK-Vx-hqG" firstAttribute="leading" secondItem="rdF-xy-Uy3" secondAttribute="trailing" constant="8" symbolic="YES" id="Scq-eR-ASx"/>
                             <constraint firstItem="Qsy-Qf-2XK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28" id="VWx-Y3-F0n"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1NH-VQ-nEl" secondAttribute="trailing" constant="35" id="bHz-E6-3ff"/>
+                            <constraint firstItem="1NH-VQ-nEl" firstAttribute="leading" secondItem="rdF-xy-Uy3" secondAttribute="trailing" constant="131" id="dCQ-Wk-chn"/>
                             <constraint firstItem="5tj-Mg-Ibc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="dQi-BK-4Lg"/>
+                            <constraint firstItem="1NH-VQ-nEl" firstAttribute="top" secondItem="6Nn-Nh-0lM" secondAttribute="bottom" constant="45" id="fbG-mR-3hi"/>
+                            <constraint firstItem="rdF-xy-Uy3" firstAttribute="top" secondItem="6Nn-Nh-0lM" secondAttribute="bottom" constant="67" id="iuq-nw-vGb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5tj-Mg-Ibc" secondAttribute="trailing" constant="28" id="z8w-aw-Xxh"/>
+                            <constraint firstItem="1NH-VQ-nEl" firstAttribute="leading" secondItem="wRK-Vx-hqG" secondAttribute="trailing" constant="30" id="zfo-3T-as0"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="give3CardsBUtton" destination="1NH-VQ-nEl" id="ibp-Pd-06E"/>
+                        <outlet property="newGameButton" destination="wRK-Vx-hqG" id="Lqp-l3-A0T"/>
                         <outletCollection property="setCardButtons" destination="Tir-tt-UKH" collectionClass="NSMutableArray" id="bFe-Yt-Vp8"/>
                         <outletCollection property="setCardButtons" destination="jm8-7M-otJ" collectionClass="NSMutableArray" id="Cqq-ra-Q56"/>
                         <outletCollection property="setCardButtons" destination="dGS-lp-qMb" collectionClass="NSMutableArray" id="cc8-Rh-jDV"/>
@@ -365,6 +399,13 @@
                         <outletCollection property="setCardButtons" destination="rBs-SG-Lqq" collectionClass="NSMutableArray" id="ARz-n4-eyK"/>
                         <outletCollection property="setCardButtons" destination="HHr-KT-o5i" collectionClass="NSMutableArray" id="74V-JS-ju8"/>
                         <outletCollection property="setCardButtons" destination="tSi-oo-Xll" collectionClass="NSMutableArray" id="mgz-0o-EAA"/>
+                        <outletCollection property="setCardButtons" destination="vzY-NN-tlu" collectionClass="NSMutableArray" id="flP-rt-Sz8"/>
+                        <outletCollection property="setCardButtons" destination="j8T-tr-EA5" collectionClass="NSMutableArray" id="g6i-e4-H7o"/>
+                        <outletCollection property="setCardButtons" destination="aN6-Y3-9wV" collectionClass="NSMutableArray" id="Bmo-w7-zdn"/>
+                        <outletCollection property="setCardButtons" destination="XM0-Sk-yGw" collectionClass="NSMutableArray" id="y5v-1V-bsT"/>
+                        <outletCollection property="setCardButtons" destination="bPn-yW-SNG" collectionClass="NSMutableArray" id="sb1-4C-hLw"/>
+                        <outletCollection property="setCardButtons" destination="BlU-Te-1Hh" collectionClass="NSMutableArray" id="Amv-DI-2dZ"/>
+                        <outletCollection property="setCardButtons" destination="zbA-0Q-ZCf" collectionClass="NSMutableArray" id="J5S-02-eDd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -375,6 +416,9 @@
     <resources>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

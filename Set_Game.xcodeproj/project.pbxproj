@@ -19,10 +19,11 @@
 		BCAAE13B281037B9002BE881 /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE13A281037B9002BE881 /* SetGame.swift */; };
 		BCAAE13D2810385C002BE881 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE13C2810385C002BE881 /* Card.swift */; };
 		BCAAE13F281057FB002BE881 /* CardFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE13E281057FB002BE881 /* CardFeature.swift */; };
-		BCAAE14128153049002BE881 /* ShapeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE14028153049002BE881 /* ShapeFeature.swift */; };
-		BCAAE14328153104002BE881 /* ShadingFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE14228153104002BE881 /* ShadingFeature.swift */; };
-		BCAAE14528153194002BE881 /* colorFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE14428153194002BE881 /* colorFeature.swift */; };
-		BCAAE14828153262002BE881 /* numberOfShapesFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE14728153262002BE881 /* numberOfShapesFeature.swift */; };
+		BCAAE14128153049002BE881 /* cardShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE14028153049002BE881 /* cardShape.swift */; };
+		BCAAE14328153104002BE881 /* cardShading.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE14228153104002BE881 /* cardShading.swift */; };
+		BCAAE14528153194002BE881 /* cardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE14428153194002BE881 /* cardColor.swift */; };
+		BCAAE14828153262002BE881 /* cardNumberOfShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE14728153262002BE881 /* cardNumberOfShapes.swift */; };
+		BCAAE14A28156DB1002BE881 /* SelectedCardsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE14928156DB1002BE881 /* SelectedCardsHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,10 +60,11 @@
 		BCAAE13A281037B9002BE881 /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
 		BCAAE13C2810385C002BE881 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		BCAAE13E281057FB002BE881 /* CardFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFeature.swift; sourceTree = "<group>"; };
-		BCAAE14028153049002BE881 /* ShapeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeFeature.swift; sourceTree = "<group>"; };
-		BCAAE14228153104002BE881 /* ShadingFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadingFeature.swift; sourceTree = "<group>"; };
-		BCAAE14428153194002BE881 /* colorFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorFeature.swift; sourceTree = "<group>"; };
-		BCAAE14728153262002BE881 /* numberOfShapesFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberOfShapesFeature.swift; sourceTree = "<group>"; };
+		BCAAE14028153049002BE881 /* cardShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardShape.swift; sourceTree = "<group>"; };
+		BCAAE14228153104002BE881 /* cardShading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardShading.swift; sourceTree = "<group>"; };
+		BCAAE14428153194002BE881 /* cardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardColor.swift; sourceTree = "<group>"; };
+		BCAAE14728153262002BE881 /* cardNumberOfShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardNumberOfShapes.swift; sourceTree = "<group>"; };
+		BCAAE14928156DB1002BE881 /* SelectedCardsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCardsHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,11 +149,12 @@
 			children = (
 				BCAAE13C2810385C002BE881 /* Card.swift */,
 				BCAAE13A281037B9002BE881 /* SetGame.swift */,
-				BCAAE14228153104002BE881 /* ShadingFeature.swift */,
+				BCAAE14228153104002BE881 /* cardShading.swift */,
 				BCAAE13E281057FB002BE881 /* CardFeature.swift */,
-				BCAAE14428153194002BE881 /* colorFeature.swift */,
-				BCAAE14028153049002BE881 /* ShapeFeature.swift */,
-				BCAAE14728153262002BE881 /* numberOfShapesFeature.swift */,
+				BCAAE14428153194002BE881 /* cardColor.swift */,
+				BCAAE14028153049002BE881 /* cardShape.swift */,
+				BCAAE14728153262002BE881 /* cardNumberOfShapes.swift */,
+				BCAAE14928156DB1002BE881 /* SelectedCardsHandler.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,15 +291,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC40D7CE280EFE59004F4E89 /* ViewController.swift in Sources */,
-				BCAAE14328153104002BE881 /* ShadingFeature.swift in Sources */,
+				BCAAE14328153104002BE881 /* cardShading.swift in Sources */,
 				BC40D7CA280EFE59004F4E89 /* AppDelegate.swift in Sources */,
 				BCAAE13D2810385C002BE881 /* Card.swift in Sources */,
-				BCAAE14528153194002BE881 /* colorFeature.swift in Sources */,
+				BCAAE14528153194002BE881 /* cardColor.swift in Sources */,
 				BCAAE13B281037B9002BE881 /* SetGame.swift in Sources */,
-				BCAAE14828153262002BE881 /* numberOfShapesFeature.swift in Sources */,
-				BCAAE14128153049002BE881 /* ShapeFeature.swift in Sources */,
+				BCAAE14828153262002BE881 /* cardNumberOfShapes.swift in Sources */,
+				BCAAE14128153049002BE881 /* cardShape.swift in Sources */,
 				BCAAE13F281057FB002BE881 /* CardFeature.swift in Sources */,
 				BC40D7CC280EFE59004F4E89 /* SceneDelegate.swift in Sources */,
+				BCAAE14A28156DB1002BE881 /* SelectedCardsHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

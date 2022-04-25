@@ -10,13 +10,13 @@ struct Card : Hashable
 {
     //------ Attributes ------\\
     let identifier: Int
-    let color: colorFeature
-    let shape: ShapeFeature
-    let shading: ShadingFeature
-    let numberOfShapes: numberOfShapesFeature
+    let color: cardColor
+    let shape: cardShape
+    let shading: cardShading
+    let numberOfShapes: cardNumberOfShapes
     var isMatched = false
     var isSelected = false
-    var isMatched = false
+    var isRevieled = false
     
     static private var indetifierFactory = 0
    
@@ -27,7 +27,7 @@ struct Card : Hashable
         return indetifierFactory
     }
     
-    init(color: colorFeature , shape: ShapeFeature,shading: ShadingFeature,numberOfShapes: numberOfShapesFeature) {
+    init(color: cardColor , shape: cardShape,shading: cardShading,numberOfShapes: cardNumberOfShapes) {
         self.identifier = Card.getUniqueIdentifier()
         self.color = color
         self.shape = shape

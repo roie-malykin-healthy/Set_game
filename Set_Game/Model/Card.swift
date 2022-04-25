@@ -15,10 +15,15 @@ struct Card : Hashable
     let shading: cardShading
     let numberOfShapes: cardNumberOfShapes
     var isMatched = false
+    var isMissMatched = false
     var isSelected = false
-    var isRevieled = false
+    //var isRevieled = false
+    
     
     static private var indetifierFactory = 0
+    //static func ==(otherCard: Card){
+        
+    
    
     
     // ------ Methods ------\\

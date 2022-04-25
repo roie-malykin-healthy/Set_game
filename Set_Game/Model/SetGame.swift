@@ -9,11 +9,15 @@ import Foundation
 class SetGame {
    //------ Attributes ------\\
     private(set) var cards: [Card]
-    private var numOfAllreadySelectedCards = 0
-    private var firstSelectedCard : Card?
-    private var secondSelectedCard : Card?
-    private var thirdSelectedCard : Card?
+    private var numOfAllreadySelectedCards: Int {
+        get { return selectedCardIndecies.count }
+    }
+   
     private(set) var points = 0
+    private var selectedCardIndecies: [Int] {
+        get { return cards.indices.filter({cards[$0].isSelected}) }
+    }
+    
    //------ Methods ------\\
      init(){
         
@@ -40,22 +44,24 @@ class SetGame {
     
     func chooseCard(at index: Int ) -> String {
         assert(cards.indices.contains(index) , "SetGame.chooseCard(at: \(index) ) : Chosen index not in cards ")
-        if !cards[index].isMatched && cards[index].isRevieled {
+        if !cards[index].isMatched  {
             if cards[index].isSelected {
                 cards[index].isSelected = false
-                numOfAllreadySelectedCards -= 1
             } else {
+                card[index].isSelected = true
                 switch self.numOfAllreadySelectedCards {
-                case 0,1:
-                    return "ok"
                 case 2:
-                    if
+                    if areSelectedCardsMatch()
                     {
                         self.points += 5
-                        return "match"
-                    }
+                        for index in selectedCardIndecies {
+                            cards[index].isMatched = true
+                        }
+                    } else {
                     self.points -= 1
-                    return "noMatch"
+                        
+                    }
+                    //return "noMatch"
                 default:
                     return "error"
                         
@@ -65,6 +71,14 @@ class SetGame {
         else {
             return "noCahnge"
         }
+        
+    }
+    
+    private func areSelectedCardsMatch() -> Bool {
+        // TODO: write match logic here
+        let first_selected_card = cards[ selectedCardIndecies[0] ]
+        let second_selected_card = cards [selectedCardIndecies[1] ]
+        let third_selected_card = cards[ selectedCardIndecies[1] ]
         
     }
     

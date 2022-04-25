@@ -6,7 +6,7 @@
 //
 
 import Foundation
-enum ShapeFeature: CardFeature {
+enum cardShape: CardFeature {
     case cicrle
     case triangle
     case square    

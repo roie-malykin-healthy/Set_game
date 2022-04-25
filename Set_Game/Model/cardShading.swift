@@ -6,7 +6,7 @@
 //
 
 import Foundation
-enum ShadingFeature: CardFeature {
+enum cardShading: CardFeature {
     case solid
     case striped
     case open

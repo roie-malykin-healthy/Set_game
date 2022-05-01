@@ -6,6 +6,6 @@
 //
 
 import Foundation
-enum cardShading: Int {
+enum cardShading: Int,CaseIterable {
     case solid = 1, striped, open
 }

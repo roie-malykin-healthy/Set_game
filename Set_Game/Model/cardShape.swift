@@ -6,6 +6,6 @@
 //
 
 import Foundation
-enum cardShape: Int {
+enum cardShape: Int,CaseIterable {
     case cicrle = 1,triangle, square
 }

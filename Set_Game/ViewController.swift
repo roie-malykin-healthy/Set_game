@@ -26,12 +26,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func touch3MoreCards(_ sender: UIButton) {
-        game.revialThreeCards()
+        //game.revialThreeCards()
         updateViewFromModel()
     }
     
     @IBAction func touchNewGame(_ sender: UIButton) {
         newGameView()
+    }
+    
+    func newGameView(){
+        game = SetGame()
+        //  TODO: Check validity
     }
     
     

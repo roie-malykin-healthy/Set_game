@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum cardColor: Int {
+enum cardColor: Int,CaseIterable {
     case red = 1,blue, green
 }

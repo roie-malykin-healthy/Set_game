@@ -7,8 +7,6 @@
 
 import Foundation
 
-enum cardColor: CardFeature {
-    case red
-    case blue
-    case green
+enum cardColor: Int {
+    case red = 1,blue, green
 }

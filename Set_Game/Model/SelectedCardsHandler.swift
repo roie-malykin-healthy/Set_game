@@ -7,7 +7,6 @@
 
 import Foundation
 struct SelectedCardsHandler {
-   
     var numOfSelectedCards = 0
     var firstCard: Card?
     var secondCard: Card?
@@ -16,8 +15,4 @@ struct SelectedCardsHandler {
 //        assert(firstCard != nil ,"SelectedCardsHandler.calc3rdCard() , firstCard is \(firstCard) , should not be nil")
 //        assert(secondCard != nil ,"SelectedCardsHandler.calc3rdCard() , secondCard is \(secondCard) , should not be nil")
 //    }
-    
-    
-    
 }
-

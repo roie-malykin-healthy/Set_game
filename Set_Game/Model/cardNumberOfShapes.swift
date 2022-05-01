@@ -6,6 +6,6 @@
 //
 
 import Foundation
-enum cardNumberOfShapes: Int ,CaseIterable {
+enum CardNumberOfShapes: Int, CaseIterable {
     case one = 1, two, three
 }

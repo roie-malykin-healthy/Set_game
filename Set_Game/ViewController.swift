@@ -7,58 +7,47 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    //------ Attributes ------\\
+final class ViewController: UIViewController {
+    // ------ Attributes ------\\
     private var game = SetGame()
     @IBOutlet private var setCardButtons: [UIButton]!
-    @IBOutlet weak var give3CardsBUtton: UIButton!
-    @IBOutlet weak var newGameButton: UIButton!
-    @IBOutlet weak var scoreText: UITextField!
+    @IBOutlet private weak var give3CardsBUtton: UIButton!
+    @IBOutlet private weak var newGameButton: UIButton!
+    @IBOutlet private weak var scoreText: UITextField!
     
-    //------ Actions ------\\
-    @IBAction private func touchCard(_ sender: UIButton)  {
-        if let cardNumber = setCardButtons.firstIndex(of: sender){
+    // ------ Actions ------\\
+    @IBAction private func touchCard(_ sender: UIButton) {
+        if let cardNumber = setCardButtons.firstIndex(of: sender) {
             game.chooseCard(at: cardNumber)
             updateViewFromModel()
-        }else {
+        } else {
             print("Chosen card was not in cardButton! - > This is a bug")
         }
     }
     
-    @IBAction func touch3MoreCards(_ sender: UIButton) {
-        //game.revialThreeCards()
+    @IBAction private func touch3MoreCards(_ sender: UIButton) {
+        // game.revialThreeCards()
         updateViewFromModel()
     }
     
-    @IBAction func touchNewGame(_ sender: UIButton) {
+    @IBAction private func touchNewGame(_ sender: UIButton) {
         newGameView()
     }
     
-    func newGameView(){
+    func newGameView() {
         game = SetGame()
-        //  TODO: Check validity
+        // #warning Check validity
     }
-    
-    
-    //--- Methods ---\\
-    
-    private func updateScoreText(current_score: Int)
-    {
-        scoreText.text = "Score : \(current_score)"
+    // --- Methods ---\\
+    private func updateScoreText( currentScore: Int) {
+        scoreText.text = "Score : \(currentScore)"
     }
     
     private func updateViewFromModel() {
-        
     }
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
 }
-

@@ -6,38 +6,30 @@
 //
 
 import Foundation
-struct Card : Hashable
-{
-    //------ Attributes ------\\
+struct Card: Hashable {
+    // ------ Attributes ------\\
     let identifier: Int
-    let color: cardColor
-    let shape: cardShape
-    let shading: cardShading
-    let numberOfShapes: cardNumberOfShapes
+    let color: CardColor
+    let shape: CardShape
+    let shading: CardShading
+    let numberOfShapes: CardNumberOfShapes
     var isMatched = false
     var isMissMatched = false
     var isSelected = false
-    //var isRevieled = false
-    
-    
-    static private var indetifierFactory = 0
-    //static func ==(otherCard: Card){
-        
-    
-   
-    
+    // var isRevieled = false
+    private static var indetifierFactory = 0
+    // static func ==(otherCard: Card){
     // ------ Methods ------\\
-    static private func getUniqueIdentifier() -> Int {
+    private static func uniqueIdentifier() -> Int {
         indetifierFactory += 1
         return indetifierFactory
     }
     
-    init(color: cardColor , shape: cardShape,shading: cardShading,numberOfShapes: cardNumberOfShapes) {
-        self.identifier = Card.getUniqueIdentifier()
+    init(color: CardColor, shape: CardShape, shading: CardShading, numberOfShapes: CardNumberOfShapes) {
+        self.identifier = Card.uniqueIdentifier()
         self.color = color
         self.shape = shape
         self.shading = shading
         self.numberOfShapes = numberOfShapes
-        
     }
 }

@@ -70,10 +70,18 @@ final class SetGame {
     
     private func areSelectedCardsMatch() -> Bool {
         // #warning write match logic here
-        _ = cards[selectedCardIndecies[0]]
-        let secondSelectedCard = cards[ selectedCardIndecies[1] ]
-        let thirdSelectedCard = cards[ selectedCardIndecies[1] ]
-        // MARK: placeHolder
-        return true
+        let firstSelectedCard = cards[selectedCardIndecies[0]]
+        let secondSelectedCard = cards[ selectedCardIndecies[1]]
+        let thirdSelectedCard = cards[ selectedCardIndecies[1]]
+        
+        let isSetMatch: Bool = validFeatureMatch(firstCardFeature: firstSelectedCard.shading.rawValue, secondCardFeature: secondSelectedCard.shading.rawValue, thirdCardFeature: thirdSelectedCard.shading.rawValue) &&
+                               validFeatureMatch(firstCardFeature: firstSelectedCard.shape.rawValue, secondCardFeature: secondSelectedCard.shape.rawValue, thirdCardFeature: thirdSelectedCard.shape.rawValue) &&
+                               validFeatureMatch(firstCardFeature: firstSelectedCard.color.rawValue, secondCardFeature: secondSelectedCard.color.rawValue, thirdCardFeature: thirdSelectedCard.color.rawValue) &&
+                               validFeatureMatch(firstCardFeature: firstSelectedCard.numberOfShapes.rawValue, secondCardFeature: secondSelectedCard.numberOfShapes.rawValue, thirdCardFeature: thirdSelectedCard.numberOfShapes.rawValue)
+        return isSetMatch
+    }
+    
+    private func validFeatureMatch( firstCardFeature: Int, secondCardFeature: Int, thirdCardFeature: Int) -> Bool {
+        (firstCardFeature + secondCardFeature + thirdCardFeature).isMultiple(of: 3)
     }
 }

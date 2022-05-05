@@ -16,6 +16,7 @@
 		BC40D7E1280EFE60004F4E89 /* Set_GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC40D7E0280EFE60004F4E89 /* Set_GameTests.swift */; };
 		BC40D7EB280EFE60004F4E89 /* Set_GameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC40D7EA280EFE60004F4E89 /* Set_GameUITests.swift */; };
 		BC40D7ED280EFE60004F4E89 /* Set_GameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC40D7EC280EFE60004F4E89 /* Set_GameUITestsLaunchTests.swift */; };
+		BC93FE55282057F600ECB5BC /* DeckOfSetCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC93FE54282057F600ECB5BC /* DeckOfSetCards.swift */; };
 		BCAAE13B281037B9002BE881 /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE13A281037B9002BE881 /* SetGame.swift */; };
 		BCAAE13D2810385C002BE881 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE13C2810385C002BE881 /* Card.swift */; };
 		BCAAE13F281057FB002BE881 /* CardFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE13E281057FB002BE881 /* CardFeature.swift */; };
@@ -57,6 +58,7 @@
 		BC40D7E6280EFE60004F4E89 /* Set_GameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Set_GameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC40D7EA280EFE60004F4E89 /* Set_GameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set_GameUITests.swift; sourceTree = "<group>"; };
 		BC40D7EC280EFE60004F4E89 /* Set_GameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set_GameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BC93FE54282057F600ECB5BC /* DeckOfSetCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfSetCards.swift; sourceTree = "<group>"; };
 		BCAAE13A281037B9002BE881 /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
 		BCAAE13C2810385C002BE881 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		BCAAE13E281057FB002BE881 /* CardFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFeature.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				BCAAE14028153049002BE881 /* cardShape.swift */,
 				BCAAE14728153262002BE881 /* cardNumberOfShapes.swift */,
 				BCAAE14928156DB1002BE881 /* SelectedCardsHandler.swift */,
+				BC93FE54282057F600ECB5BC /* DeckOfSetCards.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				BCAAE14828153262002BE881 /* cardNumberOfShapes.swift in Sources */,
 				BCAAE14128153049002BE881 /* cardShape.swift in Sources */,
 				BCAAE13F281057FB002BE881 /* CardFeature.swift in Sources */,
+				BC93FE55282057F600ECB5BC /* DeckOfSetCards.swift in Sources */,
 				BC40D7CC280EFE59004F4E89 /* SceneDelegate.swift in Sources */,
 				BCAAE14A28156DB1002BE881 /* SelectedCardsHandler.swift in Sources */,
 			);

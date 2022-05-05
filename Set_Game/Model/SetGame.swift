@@ -7,35 +7,26 @@
 
 import Foundation
 final class SetGame {
-   // ------ Attributes ------ \\
-    private(set) var cards: [Card]
+    
+    private var deck: DeckOfSetCards
+    private(set) var board: [Card]
     private var numOfAllreadySelectedCards: Int {
         selectedCardIndecies.count
     }
-   
     private(set) var points = 0
     private var selectedCardIndecies: [Int] {
         cards.indices.filter({ cards[$0].isSelected })
     }
+    private(set) var board: [(Card)]
     
    // ------ Methods ------ \\
-     init() {
-       // 1) Crate 81 Cards that represent the Set logic with 4 attributes (Mattrix? Booleans? need more discusion )
-        var cards = [Card]()
-        for color in CardColor.allCases {
-            for shape in CardShape.allCases {
-                for shading in CardShading.allCases {
-                    for number in CardNumberOfShapes.allCases {
-                        let card = Card(color: color, shape: shape, shading: shading, numberOfShapes: number)
-                        cards.append(card)
-                    }
-                }
-            }
-        }
+    init(maxNumOfCardsOnBoard: Int, numOfInitialReviledCards: Int) {
+       
         
-       // 2) Shuffle them each time
-        cards.shuffle() // #warning Need to test if this does not disrupt game logic
-        self.cards = cards
+       // 3) Stage a board consisting of 12 revieled cards and 12 unrevieled cards
+         
+        
+         
     }
     // ------ Methods ------ \\
     func chooseCard(at index: Int ) {
@@ -83,5 +74,9 @@ final class SetGame {
     
     private func validFeatureMatch( firstCardFeature: Int, secondCardFeature: Int, thirdCardFeature: Int) -> Bool {
         (firstCardFeature + secondCardFeature + thirdCardFeature).isMultiple(of: 3)
+    }
+    
+    public func fetchCard() -> Card? {
+        cards.popLast()
     }
 }

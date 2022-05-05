@@ -9,11 +9,12 @@ import UIKit
 
 final class ViewController: UIViewController {
     // ------ Attributes ------\\
-    private var game = SetGame()
     @IBOutlet private var setCardButtons: [UIButton]!
     @IBOutlet private weak var give3CardsBUtton: UIButton!
     @IBOutlet private weak var newGameButton: UIButton!
     @IBOutlet private weak var scoreText: UITextField!
+    
+    private var game = SetGame(maxNumOfCardsOnBoard: setCardButtons,numOfInitialReviledCards:12)
     
     // ------ Actions ------\\
     @IBAction private func touchCard(_ sender: UIButton) {
@@ -36,6 +37,7 @@ final class ViewController: UIViewController {
     
     func newGameView() {
         game = SetGame()
+        revieleNewCard
         // #warning Check validity
     }
     // --- Methods ---\\
@@ -44,6 +46,11 @@ final class ViewController: UIViewController {
     }
     
     private func updateViewFromModel() {
+        
+    }
+    
+    private func flipCard(cardFeatures: AttributedString , on button: UIButton) {
+        if button
     }
     
     override func viewDidLoad() {

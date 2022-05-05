@@ -9,44 +9,58 @@ import Foundation
 final class SetGame {
     
     private var deck: DeckOfSetCards
-    private(set) var board: [Card]
+    private let maxCardsOnBoard: Int
+    private(set) var board: [Card?]
+    private(set) var points = 0
+    private var selectedCardIndecies: [Int] {
+        board.indices.filter({ board[$0] != nil && board[$0]!.isSelected })
+    }
     private var numOfAllreadySelectedCards: Int {
         selectedCardIndecies.count
     }
-    private(set) var points = 0
-    private var selectedCardIndecies: [Int] {
-        cards.indices.filter({ cards[$0].isSelected })
-    }
-    private(set) var board: [(Card)]
+    
     
    // ------ Methods ------ \\
     init(maxNumOfCardsOnBoard: Int, numOfInitialReviledCards: Int) {
-       
-        
-       // 3) Stage a board consisting of 12 revieled cards and 12 unrevieled cards
-         
-        
-         
+        self.deck = DeckOfSetCards()
+        self.maxCardsOnBoard = maxNumOfCardsOnBoard
+        self.board = [Card?](repeating: nil, count: maxNumOfCardsOnBoard)
+        for _ in 0..<numOfInitialReviledCards {
+            putNewCardOnBoard()
+        }
     }
-    // ------ Methods ------ \\
+    private func removeCardFromBoard(index: Int) {
+        assert(board.indices.contains(index), "SetGame.removeCardFromBoard(index:\(index)) , Chosen index not in board")
+        assert(board[index] == nil , "SetGame.removeCardFromBoard(index:\(index)) , Chosen index is nil , Error you try to remove a non existing card " )
+        board[index] = nil
+    }
+    private func putNewCardOnBoard() {
+        assert(board.count <= maxCardsOnBoard ,"SetGame.revielNewCardFromDeck() , you try to draw more then max cards allowed on board! which is \(maxCardsOnBoard) ")
+        let vacantSpace = board.firstIndex(of: nil)
+        if vacantSpace != nil {
+            board[vacantSpace!] = deck.fetchCard()
+        }
+    }
     func chooseCard(at index: Int ) {
-        assert(cards.indices.contains(index), "SetGame.chooseCard(at: \(index) ) : Chosen index not in cards ")
-        if !cards[index].isMatched {
-            if cards[index].isSelected {
-                cards[index].isSelected = false
+        assert(board.indices.contains(index), "SetGame.chooseCard(at: \(index) ) : Chosen index not on board ")
+        
+        guard let chosenCard = board[index] 
+        if !board[index].isMatched {
+            if board[index].isSelected {
+                board[index].isSelected = false
             } else {
-                cards[index].isSelected = true
+                board[index].isSelected = true
                 switch numOfAllreadySelectedCards {
                 case 2:
                     if areSelectedCardsMatch() {
                         self.points += 5
                         for index in selectedCardIndecies {
-                            cards[index].isMatched = true
+                            board[index].isMatched = true
                         }
                     } else {
                         self.points -= 1
                         for index in selectedCardIndecies {
-                            cards[index].isMissMatched = true
+                            board[index].isMissMatched = true
                         }
                     }
                     // return "noMatch"

@@ -7,10 +7,10 @@
 
 import Foundation
 struct DeckOfSetCards {
-    // Mark: Attributes
+    // MARK: Attributes
     private var deck: [Card]
     
-    // Mark: Initilizer
+    // MARK: Initilizer
     
     init() {
         // 1) Crate 81 Cards that represent the Set logic with 4 attributes (Mattrix? Booleans? need more discusion )
@@ -29,7 +29,7 @@ struct DeckOfSetCards {
         deck.shuffle() // #warning Need to test if this does not disrupt game logic
     }
     
-    // Mark: Methods
+    // MARK: Methods
     mutating func shuffleCards() {
         deck.shuffle()
     }
@@ -37,13 +37,4 @@ struct DeckOfSetCards {
     mutating func fetchCard() -> Card? {
         deck.popLast()
     }
-    
-    
-    
-    
-    
-    
-    
 }
-
-

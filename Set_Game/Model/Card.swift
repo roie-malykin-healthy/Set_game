@@ -6,7 +6,14 @@
 //
 
 import Foundation
-struct Card: Hashable {
+final class Card: Equatable {
+    static func == (lhs: Card, rhs: Card) -> Bool {
+        lhs.color == rhs.color &&
+        lhs.shape == rhs.shape &&
+        lhs.shading == rhs.shading &&
+        lhs.numberOfShapes == rhs.numberOfShapes
+    }
+    
     // ------ Attributes ------\\
     let identifier: Int
     let color: CardColor

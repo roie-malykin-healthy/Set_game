@@ -13,8 +13,7 @@ final class ViewController: UIViewController {
     @IBOutlet private var setCardButtons: [UIButton]!
     @IBOutlet private weak var give3CardsBUtton: UIButton!
     @IBOutlet private weak var newGameButton: UIButton!
-    @IBOutlet private weak var scoreText: UITextField!
-    
+    @IBOutlet private weak var scoreLabel: UILabel!
     private lazy var game = SetGame(maxNumOfCardsOnBoard: maxNumOfCardsOnBoard, numOfInitialReviledCards: 12)
     // ------ Actions ------\\
     @IBAction private func touchCard(_ sender: UIButton) {
@@ -28,7 +27,9 @@ final class ViewController: UIViewController {
     }
     
     @IBAction private func touch3MoreCards(_ sender: UIButton) {
-        // game.revialThreeCards()
+        for _ in 1...3 {
+        game.putNewCardOnBoard()
+        }
         updateViewFromModel()
     }
     
@@ -38,21 +39,19 @@ final class ViewController: UIViewController {
     
     func newGameView() {
         game = SetGame(maxNumOfCardsOnBoard: setCardButtons.count, numOfInitialReviledCards: 12)
+        updateViewFromModel()
         // #warning Check validity
     }
     // --- Methods ---\\
-    private func updateScoreText( currentScore: Int) {
-        scoreText.text = "Score : \(currentScore)"
-    }
-    
     private func updateViewFromModel() {
         for index in 0..<maxNumOfCardsOnBoard {
             updateCardButton(index: index)
         }
+        scoreLabel.text = "Score : \(game.points)"
     }
     
     private func updateCardButton(index: Int) {
-        var cardButton = setCardButtons[index]
+        let cardButton = setCardButtons[index]
         let modelCard = game.board[index]
         
         if modelCard != nil {
@@ -87,6 +86,7 @@ final class ViewController: UIViewController {
         case .triangle:
             cardSymbol = "▲"
         }
+        
         let numOfShapes: Int
         switch card.numberOfShapes {
         case .one:
@@ -102,28 +102,31 @@ final class ViewController: UIViewController {
             cardString += cardSymbol
         }
         
-        let shading: Float
+        let shading:(strokeWidth: Float, alphaForground: CGFloat)
         switch card.shading {
         case .solid:
-            shading = -1.0
+            shading.strokeWidth = -15
+            shading.alphaForground = 1
         case .striped:
-            shading = -0.15
+            shading.strokeWidth = -1
+            shading.alphaForground = 0.3
         case .open:
-            shading = 0.50
+            shading.strokeWidth = 5
+            shading.alphaForground = 1
         }
         
         var color = UIColor.white
         switch card.color {
         case .red:
-            color = UIColor.red
+            color = UIColor.red.withAlphaComponent(shading.alphaForground)
         case .green:
-            color = UIColor.green
+            color = UIColor.green.withAlphaComponent(shading.alphaForground)
         case .blue:
-            color = UIColor.blue
+            color = UIColor.cyan.withAlphaComponent(shading.alphaForground)
         }
         
         let attributeConteiner: [NSAttributedString.Key: Any] = [
-            .strokeColor: color, .strokeWidth: shading
+            .strokeColor: color, .strokeWidth: shading.strokeWidth, .foregroundColor: color
         ]
         return NSAttributedString(string: cardString, attributes: attributeConteiner)
     }
@@ -131,5 +134,10 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        for cardButton in setCardButtons {
+            cardButton.backgroundColor = UIColor.black
+        }
+        game = SetGame(maxNumOfCardsOnBoard: maxNumOfCardsOnBoard, numOfInitialReviledCards: 12)
     }
 }

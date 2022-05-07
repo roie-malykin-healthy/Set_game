@@ -29,10 +29,10 @@ final class SetGame {
     }
     private func removeCardFromBoard(index: Int) {
         assert(board.indices.contains(index), "SetGame.removeCardFromBoard(index:\(index)) , Chosen index not in board")
-        assert(board[index] == nil, "SetGame.removeCardFromBoard(index:\(index)) , Chosen index is nil , Error you try to remove a non existing card ")
+        assert(board[index] != nil, "SetGame.removeCardFromBoard(index:\(index)) , Chosen index is nil , Error you try to remove a non existing card ")
         board[index] = nil
     }
-    private func putNewCardOnBoard() {
+    func putNewCardOnBoard() {
         assert(board.count <= maxCardsOnBoard, "SetGame.revielNewCardFromDeck() , you try to draw more then max cards allowed on board! which is \(maxCardsOnBoard) ")
         let vacantSpace = board.firstIndex(of: nil)
         if vacantSpace != nil {
@@ -45,28 +45,48 @@ final class SetGame {
         guard let chosenCard = board[index] else {
             return false
         }
+        print("chosenCardIs: \(chosenCard)")
         if !chosenCard.isMatched {
             if chosenCard.isSelected {
                 chosenCard.isSelected = false
             } else {
                 chosenCard.isSelected = true
-                switch numOfAllreadySelectedCards {
-                case 2:
+                let selectedIndecies = selectedCardIndecies
+                let countSelectedIndecies = selectedIndecies.count
+                print("choose card : num of allready selected cards \(countSelectedIndecies)")
+                switch countSelectedIndecies {
+                case 3:
                     if areSelectedCardsMatch() {
                         self.points += 5
-                        for index in selectedCardIndecies {
-                            chosenCard.isMatched = true
+                        for index in selectedIndecies {
+                            board[index]!.isMatched = true
                         }
                     } else {
                         self.points -= 1
-                        for index in selectedCardIndecies {
-                            chosenCard.isMissMatched = true
+                        for index in selectedIndecies {
+                            board[index]!.isMissMatched = true
                         }
                     }
-                    // return "noMatch"
+                case 4: // after 3 cards are allready selected
+                    if board[selectedIndecies[0]]!.isMatched || board[selectedIndecies[1]]!.isMatched {
+                        let matchedIndecies = board.indices.filter({ board[$0] != nil && board[$0]!.isMatched })
+                        assert(matchedIndecies.count == 3, "SetGame.chooseCard: ypu choose a 4th card after the three selected are matched, but the number of matched cards is \(matchedIndecies) , supposed to be 3!" )
+                        
+                        for index in matchedIndecies {
+                            board[index]?.isSelected = false
+                            removeCardFromBoard(index: index)
+                            putNewCardOnBoard()
+                        }
+                    } else { // Three selected Cards are missmatched
+                        let missMatchedIndecis = board.indices.filter({ board[$0] != nil && board[$0]!.isMissMatched })
+                        for index in missMatchedIndecis {
+                            board[index]!.isSelected = false
+                            board[index]!.isMissMatched = false
+                        }
+                    }
+                        
                 default:
-                    // MARK: placeHolder
-                    print("thus is place holder")
+                    return true
                 }
             }
         } else {
@@ -76,11 +96,16 @@ final class SetGame {
     }
     
     private func areSelectedCardsMatch() -> Bool {
+        assert(numOfAllreadySelectedCards == 3, "num of allready selected cards is: \(numOfAllreadySelectedCards)")
         // #warning write match logic here
         let firstSelectedCard = board[selectedCardIndecies[0]]!
         let secondSelectedCard = board[selectedCardIndecies[1]]!
         let thirdSelectedCard = board[selectedCardIndecies[2]]!
         
+        print("Selected cards are")
+        print(firstSelectedCard)
+        print(secondSelectedCard)
+        print(thirdSelectedCard)
         let isSetMatch: Bool = validFeatureMatch(firstCardFeature: firstSelectedCard.shading.rawValue, secondCardFeature: secondSelectedCard.shading.rawValue, thirdCardFeature: thirdSelectedCard.shading.rawValue) &&
         validFeatureMatch(firstCardFeature: firstSelectedCard.shape.rawValue, secondCardFeature: secondSelectedCard.shape.rawValue, thirdCardFeature: thirdSelectedCard.shape.rawValue) &&
         validFeatureMatch(firstCardFeature: firstSelectedCard.color.rawValue, secondCardFeature: secondSelectedCard.color.rawValue, thirdCardFeature: thirdSelectedCard.color.rawValue) &&
@@ -92,7 +117,7 @@ final class SetGame {
         (firstCardFeature + secondCardFeature + thirdCardFeature).isMultiple(of: 3)
     }
     
-    func fetchCard() -> Card? {
+    private func fetchCard() -> Card? {
         deck.fetchCard()
     }
 }

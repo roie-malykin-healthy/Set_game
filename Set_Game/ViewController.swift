@@ -138,6 +138,6 @@ final class ViewController: UIViewController {
         for cardButton in setCardButtons {
             cardButton.backgroundColor = UIColor.black
         }
-        game = SetGame(maxNumOfCardsOnBoard: maxNumOfCardsOnBoard, numOfInitialReviledCards: 12)
+       updateViewFromModel()
     }
 }

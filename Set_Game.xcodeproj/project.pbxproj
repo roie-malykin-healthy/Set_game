@@ -16,6 +16,15 @@
 		BC40D7E1280EFE60004F4E89 /* Set_GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC40D7E0280EFE60004F4E89 /* Set_GameTests.swift */; };
 		BC40D7EB280EFE60004F4E89 /* Set_GameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC40D7EA280EFE60004F4E89 /* Set_GameUITests.swift */; };
 		BC40D7ED280EFE60004F4E89 /* Set_GameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC40D7EC280EFE60004F4E89 /* Set_GameUITestsLaunchTests.swift */; };
+		BC93FE55282057F600ECB5BC /* DeckOfSetCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC93FE54282057F600ECB5BC /* DeckOfSetCards.swift */; };
+		BCAAE13B281037B9002BE881 /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE13A281037B9002BE881 /* SetGame.swift */; };
+		BCAAE13D2810385C002BE881 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE13C2810385C002BE881 /* Card.swift */; };
+		BCAAE13F281057FB002BE881 /* CardFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE13E281057FB002BE881 /* CardFeature.swift */; };
+		BCAAE14128153049002BE881 /* cardShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE14028153049002BE881 /* cardShape.swift */; };
+		BCAAE14328153104002BE881 /* cardShading.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE14228153104002BE881 /* cardShading.swift */; };
+		BCAAE14528153194002BE881 /* cardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE14428153194002BE881 /* cardColor.swift */; };
+		BCAAE14828153262002BE881 /* cardNumberOfShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE14728153262002BE881 /* cardNumberOfShapes.swift */; };
+		BCAAE14A28156DB1002BE881 /* SelectedCardsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAE14928156DB1002BE881 /* SelectedCardsHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +58,15 @@
 		BC40D7E6280EFE60004F4E89 /* Set_GameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Set_GameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC40D7EA280EFE60004F4E89 /* Set_GameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set_GameUITests.swift; sourceTree = "<group>"; };
 		BC40D7EC280EFE60004F4E89 /* Set_GameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set_GameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BC93FE54282057F600ECB5BC /* DeckOfSetCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfSetCards.swift; sourceTree = "<group>"; };
+		BCAAE13A281037B9002BE881 /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
+		BCAAE13C2810385C002BE881 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		BCAAE13E281057FB002BE881 /* CardFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFeature.swift; sourceTree = "<group>"; };
+		BCAAE14028153049002BE881 /* cardShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardShape.swift; sourceTree = "<group>"; };
+		BCAAE14228153104002BE881 /* cardShading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardShading.swift; sourceTree = "<group>"; };
+		BCAAE14428153194002BE881 /* cardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardColor.swift; sourceTree = "<group>"; };
+		BCAAE14728153262002BE881 /* cardNumberOfShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardNumberOfShapes.swift; sourceTree = "<group>"; };
+		BCAAE14928156DB1002BE881 /* SelectedCardsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCardsHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +117,7 @@
 		BC40D7C8280EFE59004F4E89 /* Set_Game */ = {
 			isa = PBXGroup;
 			children = (
+				BCAAE146281531F7002BE881 /* Model */,
 				BC40D7C9280EFE59004F4E89 /* AppDelegate.swift */,
 				BC40D7CB280EFE59004F4E89 /* SceneDelegate.swift */,
 				BC40D7CD280EFE59004F4E89 /* ViewController.swift */,
@@ -127,6 +146,22 @@
 			path = Set_GameUITests;
 			sourceTree = "<group>";
 		};
+		BCAAE146281531F7002BE881 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BCAAE13C2810385C002BE881 /* Card.swift */,
+				BCAAE13A281037B9002BE881 /* SetGame.swift */,
+				BCAAE14228153104002BE881 /* cardShading.swift */,
+				BCAAE13E281057FB002BE881 /* CardFeature.swift */,
+				BCAAE14428153194002BE881 /* cardColor.swift */,
+				BCAAE14028153049002BE881 /* cardShape.swift */,
+				BCAAE14728153262002BE881 /* cardNumberOfShapes.swift */,
+				BCAAE14928156DB1002BE881 /* SelectedCardsHandler.swift */,
+				BC93FE54282057F600ECB5BC /* DeckOfSetCards.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,6 +172,7 @@
 				BC40D7C2280EFE59004F4E89 /* Sources */,
 				BC40D7C3280EFE59004F4E89 /* Frameworks */,
 				BC40D7C4280EFE59004F4E89 /* Resources */,
+				BCC12B312816EB980059D0E0 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -253,14 +289,44 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BCC12B312816EB980059D0E0 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n        swiftlint lint --strict\n    else\n        echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n        exit 1\n    fi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BC40D7C2280EFE59004F4E89 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BC40D7CE280EFE59004F4E89 /* ViewController.swift in Sources */,
+				BCAAE14328153104002BE881 /* cardShading.swift in Sources */,
 				BC40D7CA280EFE59004F4E89 /* AppDelegate.swift in Sources */,
+				BCAAE13D2810385C002BE881 /* Card.swift in Sources */,
+				BCAAE14528153194002BE881 /* cardColor.swift in Sources */,
+				BCAAE13B281037B9002BE881 /* SetGame.swift in Sources */,
+				BCAAE14828153262002BE881 /* cardNumberOfShapes.swift in Sources */,
+				BCAAE14128153049002BE881 /* cardShape.swift in Sources */,
+				BCAAE13F281057FB002BE881 /* CardFeature.swift in Sources */,
+				BC93FE55282057F600ECB5BC /* DeckOfSetCards.swift in Sources */,
 				BC40D7CC280EFE59004F4E89 /* SceneDelegate.swift in Sources */,
+				BCAAE14A28156DB1002BE881 /* SelectedCardsHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
